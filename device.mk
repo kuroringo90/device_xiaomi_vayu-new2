@@ -356,6 +356,11 @@ PRODUCT_PACKAGES += \
    TetheringConfigOverlayVayu \
    WifiOverlayVayu
 
+# Pixel Offline charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr \
