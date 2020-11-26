@@ -6,4 +6,6 @@ allow system_server sysfs_wakeup:file { read };
 
 allow system_server vendor_camera_prop:file { r_file_perms }; 
 
+allow system_server vendor_proc_shs:dir search;
+
 get_prop(system_server, vendor_display_notch_prop)
