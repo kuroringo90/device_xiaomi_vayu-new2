@@ -32,6 +32,12 @@ on enable-low-power
     # Turn on sleep modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+    # Scheduler Sunfish
+    write /proc/sys/kernel/sched_downmigrate 85
+    write /proc/sys/kernel/sched_upmigrate 95
+    write /proc/sys/kernel/sched_downmigrate_boosted 25
+    write /proc/sys/kernel/sched_upmigrate_boosted 25
+
 on property:init.svc.recovery=running
     trigger enable-low-power
 
