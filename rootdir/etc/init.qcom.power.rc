@@ -25,6 +25,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    # Disable EAS
+    write /proc/sys/kernel/sched_energy_aware 0
+
 on enable-low-power
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
@@ -35,6 +39,9 @@ on enable-low-power
     # Scheduler Sunfish
     write /proc/sys/kernel/sched_downmigrate 85
     write /proc/sys/kernel/sched_upmigrate 95
+
+    # Enable EAS
+    write /proc/sys/kernel/sched_energy_aware 1
 
 on property:init.svc.recovery=running
     trigger enable-low-power
@@ -108,7 +115,6 @@ on init
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 1
     write /dev/stune/top-app/schedtune.prefer_idle 1
-
 
     # bring back all cores
     write /sys/devices/system/cpu/cpu0/online 1
