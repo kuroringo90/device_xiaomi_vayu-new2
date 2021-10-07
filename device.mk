@@ -375,8 +375,7 @@ PRODUCT_PACKAGES += \
    SettingsProviderOverlayVayu \
    SystemUIOverlayVayu \
    TelephonyOverlayVayu \
-   TetheringConfigOverlayVayu \
-   WifiOverlayVayu
+   WifiResCommonVayu
 
 # Pixel Offline charger
 PRODUCT_PACKAGES += \
