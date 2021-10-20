@@ -249,12 +249,6 @@ service nv_mac /vendor/bin/nv_mac
     group system inet net_admin wifi net_raw
     oneshot
 
-service vendor.energy-awareness /vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
-
 service dcvs-sh /vendor/bin/init.qti.dcvs.sh
     class late_start
     user root
