@@ -4,15 +4,20 @@ allow hal_power_default input_device:chr_file rw_file_perms;
 
 r_dir_file(hal_power_default, input_device)
 
+type proc_sched_energy_aware, proc_type, fs_type;
+type vendor_power_prop, property_type;
+
 allow hal_power_default {
   vendor_sysfs_devfreq
   sysfs_msm_subsys
   sysfs_touchpanel
+  cgroup
 }:dir search;
 
 allow hal_power_default {
   cgroup
   proc
+  proc_sched_energy_aware
   vendor_sysfs_devfreq
   sysfs_devices_system_cpu
   vendor_sysfs_graphics
@@ -31,4 +36,4 @@ allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
 unix_socket_connect(hal_power_default, vendor_pps, hal_graphics_composer_default);
 
 # To get/set powerhal state property
-set_prop(hal_power_default, power_prop)
+set_prop(hal_power_default, vendor_power_prop)
