@@ -437,10 +437,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.xiaomi_msmnile
-
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
